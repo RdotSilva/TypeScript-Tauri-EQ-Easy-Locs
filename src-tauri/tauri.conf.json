@@ -12,6 +12,16 @@
   "tauri": {
     "allowlist": {
       "all": false,
+      "window": {
+        "setAlwaysOnTop": true
+      },
+      "fs": {
+        "all": true,
+        "scope": ["**"]
+      },
+      "path": {
+        "all": true
+      },
       "shell": {
         "all": false,
         "open": true
