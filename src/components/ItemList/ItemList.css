@@ -1,0 +1,19 @@
+.item-list {
+  margin: 20px;
+}
+
+.item {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  list-style: none;
+}
+
+button {
+  margin-top: 5px;
+  padding: 5px 10px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  background-color: orange;
+}
