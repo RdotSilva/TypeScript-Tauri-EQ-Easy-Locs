@@ -33,60 +33,63 @@ const ItemList: React.FC<ListProps> = ({ items }) => {
   const uniqueCategories = [...new Set(items.map((item) => item.category))];
 
   return (
-    <div className="item-list">
-      <h2>Item List</h2>
-      <div>
-        <label htmlFor="zoneSelector">Select Zone:</label>
-        <select
-          id="zoneSelector"
-          onChange={(e) => setSelectedZone(e.target.value)}
-          value={selectedZone || ""}
-        >
-          <option value="">All Zones</option>
-          {uniqueZones.map((zone, index) => (
-            <option key={index} value={zone}>
-              {zone}
-            </option>
-          ))}
-        </select>
+    <>
+      <div className="select-container">
+        <div className="select-group">
+          <label htmlFor="zoneSelector">Zone:</label>
+          <select
+            id="zoneSelector"
+            onChange={(e) => setSelectedZone(e.target.value)}
+            value={selectedZone || ""}
+          >
+            <option value="">All Zones</option>
+            {uniqueZones.map((zone, index) => (
+              <option key={index} value={zone}>
+                {zone}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className="select-group">
+          <label htmlFor="categorySelector">Category:</label>
+          <select
+            id="categorySelector"
+            onChange={(e) => setSelectedCategory(e.target.value)}
+            value={selectedCategory || ""}
+          >
+            <option value="">All Categories</option>
+            {uniqueCategories.map((category, index) => (
+              <option key={index} value={category}>
+                {category}
+              </option>
+            ))}
+          </select>
+        </div>
       </div>
-      <div>
-        <label htmlFor="categorySelector">Select Category:</label>
-        <select
-          id="categorySelector"
-          onChange={(e) => setSelectedCategory(e.target.value)}
-          value={selectedCategory || ""}
-        >
-          <option value="">All Categories</option>
-          {uniqueCategories.map((category, index) => (
-            <option key={index} value={category}>
-              {category}
-            </option>
-          ))}
-        </select>
-      </div>
-      <ul>
-        {filteredItems.map((item, index) => (
-          <li key={index} className="item">
-            <div>
-              <strong>Zone:</strong> {item.zone}
-            </div>
-            <div>
-              <strong>Command:</strong> {item.command}
-            </div>
-            <div>
-              <strong>Description:</strong> {item.description}
-            </div>
-            {item.category && (
+      <div className="item-list">
+        <ul>
+          {filteredItems.map((item, index) => (
+            <li key={index} className="item">
               <div>
-                <strong>Category:</strong> {item.category}
+                <strong>Zone:</strong> {item.zone}
               </div>
-            )}
-            <CopyToClipboardButton text={item.command} />
-          </li>
-        ))}
-      </ul>
-    </div>
+              <div>
+                <strong>Command:</strong> {item.command}
+              </div>
+              <div>
+                <strong>Description:</strong> {item.description}
+              </div>
+              {item.category && (
+                <div>
+                  <strong>Category:</strong> {item.category}
+                </div>
+              )}
+              <CopyToClipboardButton text={item.command} />
+            </li>
+          ))}
+        </ul>
+      </div>
+    </>
   );
 };
 
