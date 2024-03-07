@@ -2,11 +2,19 @@
   margin: 20px;
 }
 
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+}
+
 .item {
   border: 1px solid #ccc;
   padding: 10px;
-  margin-bottom: 10px;
-  list-style: none;
+  margin: 10px;
+  flex: 1 0 calc(25% - 20px); /* Each item takes up 25% of the container width with margins */
+  max-width: calc(25% - 20px); /* Maximum 4 items per row with margins */
 }
 
 button {
@@ -16,4 +24,8 @@ button {
   border: none;
   cursor: pointer;
   background-color: orange;
+}
+
+.select-container {
+  display: flex;
 }
