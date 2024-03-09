@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { LocItem } from "../../types/LocItem";
 import "./ItemList.css";
+import SendCommandButton from "../SendCommandButton/SendCommandButton";
 
 interface ListProps {
   items: LocItem[];
@@ -85,6 +86,7 @@ const ItemList: React.FC<ListProps> = ({ items }) => {
                 </div>
               )}
               <CopyToClipboardButton text={item.command} />
+              <SendCommandButton command={item.command} />
             </li>
           ))}
         </ul>
