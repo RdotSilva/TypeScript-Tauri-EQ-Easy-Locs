@@ -32,7 +32,10 @@ const ItemList: React.FC<ListProps> = ({ items }) => {
   });
 
   const uniqueZones = [...new Set(items.map((item) => item.zone))];
-  const uniqueCategories = [...new Set(items.map((item) => item.category))];
+
+  const uniqueCategories = [...new Set(items.map((item) => item.category))]
+    .filter((category) => category !== undefined)
+    .map((category) => category as string);
 
   const handleZoneChange = (value: string) => {
     setSelectedZone(value);
