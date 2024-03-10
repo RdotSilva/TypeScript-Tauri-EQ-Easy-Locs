@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { LocItem } from "../../types/LocItem";
 import "./ItemList.css";
 import SendCommandButton from "../SendCommandButton/SendCommandButton";
+import FilterSelectInput from "../FilterSelectInput/FilterSelectInput";
 
 interface ListProps {
   items: LocItem[];
@@ -33,39 +34,29 @@ const ItemList: React.FC<ListProps> = ({ items }) => {
   const uniqueZones = [...new Set(items.map((item) => item.zone))];
   const uniqueCategories = [...new Set(items.map((item) => item.category))];
 
+  const handleZoneChange = (value: string) => {
+    setSelectedZone(value);
+  };
+
+  const handleCategoryChange = (value: string) => {
+    setSelectedCategory(value);
+  };
+
   return (
     <>
       <div className="select-container">
-        <div className="select-group">
-          <label htmlFor="zoneSelector">Zone:</label>
-          <select
-            id="zoneSelector"
-            onChange={(e) => setSelectedZone(e.target.value)}
-            value={selectedZone || ""}
-          >
-            <option value="">All Zones</option>
-            {uniqueZones.map((zone, index) => (
-              <option key={index} value={zone}>
-                {zone}
-              </option>
-            ))}
-          </select>
-        </div>
-        <div className="select-group">
-          <label htmlFor="categorySelector">Category:</label>
-          <select
-            id="categorySelector"
-            onChange={(e) => setSelectedCategory(e.target.value)}
-            value={selectedCategory || ""}
-          >
-            <option value="">All Categories</option>
-            {uniqueCategories.map((category, index) => (
-              <option key={index} value={category}>
-                {category}
-              </option>
-            ))}
-          </select>
-        </div>
+        <FilterSelectInput
+          uniqueOptions={uniqueZones}
+          selectedValue={selectedZone}
+          label="Zone"
+          onSelectChange={handleZoneChange}
+        />
+        <FilterSelectInput
+          uniqueOptions={uniqueCategories}
+          selectedValue={selectedCategory}
+          label="Category"
+          onSelectChange={handleCategoryChange}
+        />
       </div>
       <div className="item-list">
         <ul>
