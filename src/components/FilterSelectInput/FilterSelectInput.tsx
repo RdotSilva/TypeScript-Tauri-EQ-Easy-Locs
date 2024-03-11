@@ -7,6 +7,9 @@ interface FilterSelectsProps {
   onSelectChange: (value: string) => void;
 }
 
+/**
+ * Render a select input used to filter items
+ */
 const FilterSelectInput: React.FC<FilterSelectsProps> = ({
   uniqueOptions,
   selectedValue,
