@@ -3,7 +3,7 @@
  * @param label The label to be pluralized
  * @returns The pluralized label
  */
-const pluralizeLabel = (label: string): string => {
+export const pluralizeLabel = (label: string): string => {
   const ySuffixes = ["y"];
 
   if (ySuffixes.some((suffix) => label.endsWith(suffix))) {
