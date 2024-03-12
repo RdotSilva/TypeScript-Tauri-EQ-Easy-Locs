@@ -1,4 +1,5 @@
 import React from "react";
+import { pluralizeLabel } from "../../utils/pluralizeLabel";
 
 interface FilterSelectsProps {
   uniqueOptions: string[];
@@ -24,7 +25,7 @@ const FilterSelectInput: React.FC<FilterSelectsProps> = ({
         onChange={(e) => onSelectChange(e.target.value)}
         value={selectedValue || ""}
       >
-        <option value="">All {label}s</option>
+        <option value="">All {pluralizeLabel(label)}</option>
         {uniqueOptions.map((option, index) => (
           <option key={index} value={option}>
             {option}
