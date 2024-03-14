@@ -3,9 +3,12 @@ import { LocItem } from "../../types/LocItem";
 import SendCommandButton from "../SendCommandButton/SendCommandButton";
 import CopyToClipboardButton from "../CopyToClipboardButton/CopyToClipboardButton";
 
-const ListItem: React.FC<{ item: LocItem }> = ({ item }) => {
+const ListItem: React.FC<{ item: LocItem; key: string | number }> = ({
+  item,
+  key,
+}) => {
   return (
-    <li className="item">
+    <li key={key} className="item">
       <div>
         <strong>Zone:</strong> {item.zone}
       </div>
