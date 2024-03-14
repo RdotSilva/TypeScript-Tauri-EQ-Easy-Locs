@@ -3,6 +3,7 @@ import { LocItem } from "../../types/LocItem";
 import "./ItemList.css";
 import SendCommandButton from "../SendCommandButton/SendCommandButton";
 import FilterSelectInput from "../FilterSelectInput/FilterSelectInput";
+import ListItem from "../ListItem/ListItem";
 
 interface ListProps {
   items: LocItem[];
@@ -64,24 +65,7 @@ const ItemList: React.FC<ListProps> = ({ items }) => {
       <div className="item-list">
         <ul>
           {filteredItems.map((item, index) => (
-            <li key={index} className="item">
-              <div>
-                <strong>Zone:</strong> {item.zone}
-              </div>
-              <div>
-                <strong>Command:</strong> {item.command}
-              </div>
-              <div>
-                <strong>Description:</strong> {item.description}
-              </div>
-              {item.category && (
-                <div>
-                  <strong>Category:</strong> {item.category}
-                </div>
-              )}
-              <CopyToClipboardButton text={item.command} />
-              <SendCommandButton command={item.command} />
-            </li>
+            <ListItem key={index} item={item} />
           ))}
         </ul>
       </div>
