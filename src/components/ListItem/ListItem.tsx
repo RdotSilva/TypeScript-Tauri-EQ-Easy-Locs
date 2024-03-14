@@ -1,14 +1,7 @@
 import React from "react";
 import { LocItem } from "../../types/LocItem";
 import SendCommandButton from "../SendCommandButton/SendCommandButton";
-
-const CopyToClipboardButton: React.FC<{ text: string }> = ({ text }) => {
-  const copyToClipboard = () => {
-    navigator.clipboard.writeText(text);
-  };
-
-  return <button onClick={copyToClipboard}>Copy to Clipboard</button>;
-};
+import CopyToClipboardButton from "../CopyToClipboardButton/CopyToClipboardButton";
 
 const ListItem: React.FC<{ item: LocItem }> = ({ item }) => {
   return (
