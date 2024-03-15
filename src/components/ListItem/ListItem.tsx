@@ -9,20 +9,10 @@ const ListItem: React.FC<{ item: LocItem; key: string | number }> = ({
 }) => {
   return (
     <li key={key} className="item">
-      <div>
-        <strong>Zone:</strong> {item.zone}
-      </div>
-      <div>
-        <strong>Command:</strong> {item.command}
-      </div>
-      <div>
-        <strong>Description:</strong> {item.description}
-      </div>
-      {item.category && (
-        <div>
-          <strong>Category:</strong> {item.category}
-        </div>
-      )}
+      <div>{item.zone}</div>
+      <div>{item.command}</div>
+      <div>{item.description}</div>
+      {item.category && <div>{item.category}</div>}
       <CopyToClipboardButton text={item.command} />
       <SendCommandButton command={item.command} />
     </li>
