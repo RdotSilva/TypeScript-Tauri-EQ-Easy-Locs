@@ -1,21 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { LocItem } from "../../types/LocItem";
 import "./ItemList.css";
-import SendCommandButton from "../SendCommandButton/SendCommandButton";
 import FilterSelectInput from "../FilterSelectInput/FilterSelectInput";
 import ListItem from "../ListItem/ListItem";
 
 interface ListProps {
   items: LocItem[];
 }
-
-const CopyToClipboardButton: React.FC<{ text: string }> = ({ text }) => {
-  const copyToClipboard = () => {
-    navigator.clipboard.writeText(text);
-  };
-
-  return <button onClick={copyToClipboard}>Copy to Clipboard</button>;
-};
 
 const ItemList: React.FC<ListProps> = ({ items }) => {
   const [selectedZone, setSelectedZone] = useState<string | null>(null);
