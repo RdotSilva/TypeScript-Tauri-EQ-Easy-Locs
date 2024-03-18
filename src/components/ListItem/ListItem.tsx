@@ -3,7 +3,11 @@ import { LocItem } from "../../types/LocItem";
 import SendCommandButton from "../SendCommandButton/SendCommandButton";
 import CopyToClipboardButton from "../CopyToClipboardButton/CopyToClipboardButton";
 import "./ListItem.css";
-import { Divider } from "@mui/material";
+import { Divider, styled } from "@mui/material";
+
+const StyledDivider = styled(Divider)`
+  margin: 5px 0;
+`;
 
 const ListItem: React.FC<{ item: LocItem; key: string | number }> = ({
   item,
@@ -12,13 +16,13 @@ const ListItem: React.FC<{ item: LocItem; key: string | number }> = ({
   return (
     <li key={key} className="item">
       <div className="item-zone">{item.zone}</div>
-      <Divider />
+      <StyledDivider />
       <div className="item-command">{item.command}</div>
-      <Divider />
+      <StyledDivider />
       <div className="item-description">{item.description}</div>
-      <Divider />
+      <StyledDivider />
       {item.category && <div className="item-category">{item.category}</div>}
-      <Divider />
+      <StyledDivider />
       <CopyToClipboardButton text={item.command} />
       <SendCommandButton command={item.command} />
     </li>
