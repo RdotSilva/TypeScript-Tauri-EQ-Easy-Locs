@@ -14,7 +14,7 @@ export const StyledItemZone = styled(Box)`
   color: #007bff;
 `;
 
-const ListItem: React.FC<{ item: LocItem; key: string | number }> = ({
+const LocDetails: React.FC<{ item: LocItem; key: string | number }> = ({
   item,
   key,
 }) => {
@@ -24,7 +24,7 @@ const ListItem: React.FC<{ item: LocItem; key: string | number }> = ({
       <StyledDivider />
       <Box>{item.command}</Box>
       <StyledDivider />
-      <Box className="item-description">{item.description}</Box>
+      <Box>{item.description}</Box>
       <StyledDivider />
       {item.category && <Box>{item.category}</Box>}
       <StyledDivider />
@@ -36,4 +36,4 @@ const ListItem: React.FC<{ item: LocItem; key: string | number }> = ({
   );
 };
 
-export default ListItem;
+export default LocDetails;
