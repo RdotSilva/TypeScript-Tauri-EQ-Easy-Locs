@@ -22,14 +22,16 @@ const ListItem: React.FC<{ item: LocItem; key: string | number }> = ({
     <li key={key} className="item">
       <StyledItemZone>{item.zone}</StyledItemZone>
       <StyledDivider />
-      <div className="item-command">{item.command}</div>
+      <Box>{item.command}</Box>
       <StyledDivider />
-      <div className="item-description">{item.description}</div>
+      <Box className="item-description">{item.description}</Box>
       <StyledDivider />
-      {item.category && <div className="item-category">{item.category}</div>}
+      {item.category && <Box>{item.category}</Box>}
       <StyledDivider />
-      <CopyToClipboardButton text={item.command} />
-      <SendCommandButton command={item.command} />
+      <Box>
+        <CopyToClipboardButton text={item.command} />
+        <SendCommandButton command={item.command} />
+      </Box>
     </li>
   );
 };
