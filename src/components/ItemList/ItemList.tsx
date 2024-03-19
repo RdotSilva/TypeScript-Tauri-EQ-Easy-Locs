@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { LocItem } from "../../types/LocItem";
 import "./ItemList.css";
 import FilterSelectInput from "../FilterSelectInput/FilterSelectInput";
-import ListItem from "../ListItem/ListItem";
+import LocDetails from "../LocDetails/LocDetails";
 
 interface ListProps {
   items: LocItem[];
@@ -56,7 +56,7 @@ const ItemList: React.FC<ListProps> = ({ items }) => {
       <div className="item-list">
         <ul>
           {filteredItems.map((item, index) => (
-            <ListItem key={index} item={item} />
+            <LocDetails key={index} item={item} />
           ))}
         </ul>
       </div>
