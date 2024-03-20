@@ -2,7 +2,6 @@ import React from "react";
 import { LocItem } from "../../types/LocItem";
 import SendCommandButton from "../SendCommandButton/SendCommandButton";
 import CopyToClipboardButton from "../CopyToClipboardButton/CopyToClipboardButton";
-import "./ListItem.css";
 import { Box, Divider, styled } from "@mui/material";
 
 const StyledDivider = styled(Divider)`
