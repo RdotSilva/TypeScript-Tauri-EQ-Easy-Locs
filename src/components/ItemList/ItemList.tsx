@@ -3,6 +3,11 @@ import { LocItem } from "../../types/LocItem";
 import "./ItemList.css";
 import FilterSelectInput from "../FilterSelectInput/FilterSelectInput";
 import LocDetails from "../LocDetails/LocDetails";
+import { Box, styled } from "@mui/material";
+
+export const StyledSelectContainer = styled(Box)`
+  display: flex;
+`;
 
 interface ListProps {
   items: LocItem[];
@@ -39,7 +44,7 @@ const ItemList: React.FC<ListProps> = ({ items }) => {
 
   return (
     <>
-      <div className="select-container">
+      <StyledSelectContainer>
         <FilterSelectInput
           uniqueOptions={uniqueZones}
           selectedValue={selectedZone}
@@ -52,7 +57,7 @@ const ItemList: React.FC<ListProps> = ({ items }) => {
           label="Category"
           onSelectChange={handleCategoryChange}
         />
-      </div>
+      </StyledSelectContainer>
       <div className="item-list">
         <ul>
           {filteredItems.map((item, index) => (
