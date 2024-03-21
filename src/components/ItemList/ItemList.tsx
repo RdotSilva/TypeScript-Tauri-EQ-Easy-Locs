@@ -3,7 +3,7 @@ import { LocItem } from "../../types/LocItem";
 import "./ItemList.css";
 import FilterSelectInput from "../FilterSelectInput/FilterSelectInput";
 import LocDetails from "../LocDetails/LocDetails";
-import { Box, styled } from "@mui/material";
+import { Box, List, styled } from "@mui/material";
 
 export const StyledSelectContainer = styled(Box)`
   display: flex;
@@ -63,11 +63,11 @@ const ItemList: React.FC<ListProps> = ({ items }) => {
         />
       </StyledSelectContainer>
       <StyledItemListContainer>
-        <ul>
+        <List>
           {filteredItems.map((item, index) => (
             <LocDetails key={index} item={item} />
           ))}
-        </ul>
+        </List>
       </StyledItemListContainer>
     </>
   );
