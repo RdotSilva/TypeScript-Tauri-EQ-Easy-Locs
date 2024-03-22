@@ -5,14 +5,6 @@ ul {
   padding: 0;
 }
 
-.item {
-  border: 1px solid #ccc;
-  padding: 10px;
-  margin: 10px;
-  flex: 1 0 calc(25% - 20px); /* Each item takes up 25% of the container width with margins */
-  max-width: calc(25% - 20px); /* Maximum 4 items per row with margins */
-}
-
 button {
   margin-top: 5px;
   padding: 5px 10px;
