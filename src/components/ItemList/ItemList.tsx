@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { LocItem } from "../../types/LocItem";
 import "./ItemList.css";
 import FilterSelectInput from "../FilterSelectInput/FilterSelectInput";
@@ -20,10 +20,6 @@ interface ListProps {
 const ItemList: React.FC<ListProps> = ({ items }) => {
   const [selectedZone, setSelectedZone] = useState<string | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-
-  useEffect(() => {
-    console.log(items);
-  }, []);
 
   const filteredItems = items.filter((item) => {
     const zoneCondition = !selectedZone || item.zone === selectedZone;
