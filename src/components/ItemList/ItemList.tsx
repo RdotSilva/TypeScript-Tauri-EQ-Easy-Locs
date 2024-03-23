@@ -13,6 +13,13 @@ export const StyledItemListContainer = styled(Box)`
   margin: 20px;
 `;
 
+export const StyledList = styled(List)`
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+`;
+
 interface ListProps {
   items: LocItem[];
 }
@@ -59,11 +66,11 @@ const ItemList: React.FC<ListProps> = ({ items }) => {
         />
       </StyledSelectContainer>
       <StyledItemListContainer>
-        <List>
+        <StyledList>
           {filteredItems.map((item, index) => (
             <LocDetails key={index} item={item} />
           ))}
-        </List>
+        </StyledList>
       </StyledItemListContainer>
     </>
   );
