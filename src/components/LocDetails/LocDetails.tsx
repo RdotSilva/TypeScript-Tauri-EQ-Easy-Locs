@@ -2,7 +2,17 @@ import React from "react";
 import { LocItem } from "../../types/LocItem";
 import SendCommandButton from "../SendCommandButton/SendCommandButton";
 import CopyToClipboardButton from "../CopyToClipboardButton/CopyToClipboardButton";
-import { Box, Divider, styled } from "@mui/material";
+import { Box, Divider, ListItem, styled } from "@mui/material";
+
+const StyledListItem = styled(ListItem)`
+  border: solid;
+  margin: 0;
+  flex-basis: calc(
+    33.33% - 20px
+  ); /* Set initial size for each item (adjust margin as needed) */
+  margin-right: 20px; /* Adjust the margin between items */
+  margin-bottom: 20px; /* Adjust the margin between rows */
+`;
 
 const StyledDivider = styled(Divider)`
   margin: 5px 0;
@@ -18,7 +28,7 @@ const LocDetails: React.FC<{ item: LocItem; key: string | number }> = ({
   key,
 }) => {
   return (
-    <li key={key} className="item">
+    <StyledListItem key={key} className="item">
       <StyledItemZone>{item.zone}</StyledItemZone>
       <StyledDivider />
       <Box>{item.command}</Box>
@@ -31,7 +41,7 @@ const LocDetails: React.FC<{ item: LocItem; key: string | number }> = ({
         <CopyToClipboardButton text={item.command} />
         <SendCommandButton command={item.command} />
       </Box>
-    </li>
+    </StyledListItem>
   );
 };
 
