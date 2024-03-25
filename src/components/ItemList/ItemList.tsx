@@ -3,7 +3,7 @@ import { LocItem } from "../../types/LocItem";
 import "./ItemList.css";
 import FilterSelectInput from "../FilterSelectInput/FilterSelectInput";
 import LocDetails from "../LocDetails/LocDetails";
-import { Box, List, styled } from "@mui/material";
+import { Box, Container, List, styled } from "@mui/material";
 
 export const StyledSelectContainer = styled(Box)`
   display: flex;
@@ -16,6 +16,7 @@ export const StyledItemListContainer = styled(Box)`
 export const StyledList = styled(List)`
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-start; /* Align items to the start of the flex container */
   list-style: none;
   padding: 0;
 `;
@@ -50,7 +51,7 @@ const ItemList: React.FC<ListProps> = ({ items }) => {
   };
 
   return (
-    <>
+    <Container>
       <StyledSelectContainer>
         <FilterSelectInput
           uniqueOptions={uniqueZones}
@@ -72,7 +73,7 @@ const ItemList: React.FC<ListProps> = ({ items }) => {
           ))}
         </StyledList>
       </StyledItemListContainer>
-    </>
+    </Container>
   );
 };
 
