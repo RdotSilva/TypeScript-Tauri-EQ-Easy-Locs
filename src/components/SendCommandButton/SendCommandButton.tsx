@@ -1,5 +1,6 @@
 import React from "react";
 import { invoke } from "@tauri-apps/api/tauri";
+import { Button } from "@mui/material";
 
 interface SendCommandButtonProps {
   command: string;
@@ -14,7 +15,7 @@ const SendCommandButton: React.FC<SendCommandButtonProps> = ({ command }) => {
     }
   };
 
-  return <button onClick={sendCommandToWindow}>Send to EverQuest</button>;
+  return <Button onClick={sendCommandToWindow}>Send to EverQuest</Button>;
 };
 
 export default SendCommandButton;
