@@ -15,7 +15,7 @@ const StyledListItem = styled(ListItem)`
 `;
 
 const StyledDivider = styled(Divider)`
-  margin: 5px 0;
+  margin: 10px 0;
 `;
 
 export const StyledItemZone = styled(Box)`
