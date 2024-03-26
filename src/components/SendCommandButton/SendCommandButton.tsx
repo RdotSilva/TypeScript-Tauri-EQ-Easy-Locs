@@ -1,6 +1,15 @@
 import React from "react";
 import { invoke } from "@tauri-apps/api/tauri";
-import { Button } from "@mui/material";
+import { Button, styled } from "@mui/material";
+
+const StyledButton = styled(Button)`
+  margin-top: 5px;
+  padding: 5px 10px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  background-color: orange;
+`;
 
 interface SendCommandButtonProps {
   command: string;
@@ -15,7 +24,9 @@ const SendCommandButton: React.FC<SendCommandButtonProps> = ({ command }) => {
     }
   };
 
-  return <Button onClick={sendCommandToWindow}>Send to EverQuest</Button>;
+  return (
+    <StyledButton onClick={sendCommandToWindow}>Send to EverQuest</StyledButton>
+  );
 };
 
 export default SendCommandButton;
