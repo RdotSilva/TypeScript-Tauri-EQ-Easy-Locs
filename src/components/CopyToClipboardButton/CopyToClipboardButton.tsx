@@ -17,7 +17,9 @@ const CopyToClipboardButton: React.FC<{ text: string }> = ({ text }) => {
   };
 
   return (
-    <StyledButton onClick={copyToClipboard}>Copy to Clipboard</StyledButton>
+    <StyledButton variant="contained" size="small" onClick={copyToClipboard}>
+      Copy
+    </StyledButton>
   );
 };
 
