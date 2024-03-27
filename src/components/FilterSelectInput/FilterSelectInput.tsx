@@ -1,5 +1,6 @@
 import React from "react";
 import { pluralizeLabel } from "../../utils/pluralizeLabel";
+import { Select } from "@mui/material";
 
 interface FilterSelectsProps {
   uniqueOptions: string[];
@@ -20,7 +21,7 @@ const FilterSelectInput: React.FC<FilterSelectsProps> = ({
   return (
     <div className="select-group">
       <label htmlFor={`${label}Selector`}>{label}:</label>
-      <select
+      <Select
         id={`${label}Selector`}
         onChange={(e) => onSelectChange(e.target.value)}
         value={selectedValue || ""}
@@ -31,7 +32,7 @@ const FilterSelectInput: React.FC<FilterSelectsProps> = ({
             {option}
           </option>
         ))}
-      </select>
+      </Select>
     </div>
   );
 };
