@@ -25,7 +25,13 @@ const SendCommandButton: React.FC<SendCommandButtonProps> = ({ command }) => {
   };
 
   return (
-    <StyledButton onClick={sendCommandToWindow}>Send to EverQuest</StyledButton>
+    <StyledButton
+      variant="contained"
+      size="small"
+      onClick={sendCommandToWindow}
+    >
+      Send
+    </StyledButton>
   );
 };
 
