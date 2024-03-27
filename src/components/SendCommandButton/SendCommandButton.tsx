@@ -3,11 +3,6 @@ import { invoke } from "@tauri-apps/api/tauri";
 import { Button, styled } from "@mui/material";
 
 const StyledButton = styled(Button)`
-  margin-top: 5px;
-  padding: 5px 10px;
-  color: #fff;
-  border: none;
-  cursor: pointer;
   background-color: orange;
 `;
 
