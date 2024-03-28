@@ -4,14 +4,9 @@ import SendCommandButton from "../SendCommandButton/SendCommandButton";
 import CopyToClipboardButton from "../CopyToClipboardButton/CopyToClipboardButton";
 import { Box, Divider, ListItem, styled } from "@mui/material";
 
-const StyledListItem = styled(ListItem)`
+const StyledContainer = styled(Box)`
   border: solid;
-  margin: 0;
-  flex-basis: calc(
-    33.33% - 20px
-  ); /* Set initial size for each item (adjust margin as needed) */
-  margin-right: 20px; /* Adjust the margin between items */
-  margin-bottom: 20px; /* Adjust the margin between rows */
+  display: flex;
 `;
 
 const StyledDivider = styled(Divider)`
@@ -28,20 +23,22 @@ const LocDetails: React.FC<{ item: LocItem; key: string | number }> = ({
   key,
 }) => {
   return (
-    <StyledListItem key={key} className="item">
-      <StyledItemZone>{item.zone}</StyledItemZone>
-      <StyledDivider />
-      <Box>{item.command}</Box>
-      <StyledDivider />
-      <Box>{item.description}</Box>
-      <StyledDivider />
-      {item.category && <Box>{item.category}</Box>}
-      <StyledDivider />
-      <Box>
-        <CopyToClipboardButton text={item.command} />
-        <SendCommandButton command={item.command} />
-      </Box>
-    </StyledListItem>
+    <StyledContainer>
+      <ListItem key={key}>
+        <StyledItemZone>{item.zone}</StyledItemZone>
+        <StyledDivider />
+        <Box>{item.command}</Box>
+        <StyledDivider />
+        <Box>{item.description}</Box>
+        <StyledDivider />
+        {item.category && <Box>{item.category}</Box>}
+        <StyledDivider />
+        <Box>
+          <CopyToClipboardButton text={item.command} />
+          <SendCommandButton command={item.command} />
+        </Box>
+      </ListItem>
+    </StyledContainer>
   );
 };
 
