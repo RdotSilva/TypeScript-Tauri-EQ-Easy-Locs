@@ -6,14 +6,12 @@ import { Box, Divider, ListItem, styled } from "@mui/material";
 
 const StyledContainer = styled(Box)`
   border: solid;
-  display: flex;
+  display: inline-grid;
+  grid-template-rows: repeat(4, auto);
+  margin: 5px;
 `;
 
-const StyledDivider = styled(Divider)`
-  margin: 10px 0;
-`;
-
-export const StyledItemZone = styled(Box)`
+const StyledItemZone = styled(Box)`
   font-weight: bold;
   color: #007bff;
 `;
@@ -26,13 +24,21 @@ const LocDetails: React.FC<{ item: LocItem; key: string | number }> = ({
     <StyledContainer>
       <ListItem key={key}>
         <StyledItemZone>{item.zone}</StyledItemZone>
-        <StyledDivider />
+      </ListItem>
+      <Divider />
+      <ListItem key={key}>
         <Box>{item.command}</Box>
-        <StyledDivider />
+      </ListItem>
+      <Divider />
+      <ListItem key={key}>
         <Box>{item.description}</Box>
-        <StyledDivider />
-        {item.category && <Box>{item.category}</Box>}
-        <StyledDivider />
+      </ListItem>
+      <Divider />
+      <ListItem key={key}>
+        <Box>{item.category}</Box>
+      </ListItem>
+      <Divider />
+      <ListItem key={key}>
         <Box>
           <CopyToClipboardButton text={item.command} />
           <SendCommandButton command={item.command} />
