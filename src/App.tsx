@@ -4,7 +4,6 @@ import ItemList from "./components/ItemList/ItemList";
 import { appWindow } from "@tauri-apps/api/window";
 import { parseCSVFile } from "./utils/csvParser";
 
-import "../src/components/ItemList/ItemList.css";
 import { LocItem } from "./types/LocItem";
 
 await appWindow.setAlwaysOnTop(true);

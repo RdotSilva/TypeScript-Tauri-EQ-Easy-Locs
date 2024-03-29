@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { LocItem } from "../../types/LocItem";
-import "./ItemList.css";
 import FilterSelectInput from "../FilterSelectInput/FilterSelectInput";
 import LocDetails from "../LocDetails/LocDetails";
 import { Box, Container, List, styled } from "@mui/material";
