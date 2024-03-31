@@ -25,6 +25,7 @@ const FilterSelectInput: React.FC<FilterSelectsProps> = ({
         onChange={(e) => onSelectChange(e.target.value)}
         value={selectedValue || ""}
       >
+        <MenuItem value="">All</MenuItem>
         {uniqueOptions.map((option) => (
           <MenuItem value={option}>{option}</MenuItem>
         ))}
