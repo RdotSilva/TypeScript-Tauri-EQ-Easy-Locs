@@ -1,6 +1,5 @@
 import React from "react";
-import { pluralizeLabel } from "../../utils/pluralizeLabel";
-import { FormControl, InputLabel, Select } from "@mui/material";
+import { FormControl, InputLabel, Select, MenuItem } from "@mui/material";
 
 interface FilterSelectsProps {
   uniqueOptions: string[];
@@ -26,11 +25,8 @@ const FilterSelectInput: React.FC<FilterSelectsProps> = ({
         onChange={(e) => onSelectChange(e.target.value)}
         value={selectedValue || ""}
       >
-        <option value="">All {pluralizeLabel(label)}</option>
-        {uniqueOptions.map((option, index) => (
-          <option key={index} value={option}>
-            {option}
-          </option>
+        {uniqueOptions.map((option) => (
+          <MenuItem value={option}>{option}</MenuItem>
         ))}
       </Select>
     </FormControl>
