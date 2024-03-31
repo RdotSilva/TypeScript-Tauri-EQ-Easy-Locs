@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import "./App.css";
 import ItemList from "./components/ItemList/ItemList";
 import { appWindow } from "@tauri-apps/api/window";
 import { parseCSVFile } from "./utils/csvParser";
