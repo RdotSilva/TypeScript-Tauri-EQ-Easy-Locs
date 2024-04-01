@@ -2,18 +2,10 @@ import React, { useState } from "react";
 import { LocItem } from "../../types/LocItem";
 import FilterSelectInput from "../FilterSelectInput/FilterSelectInput";
 import LocDetails from "../LocDetails/LocDetails";
-import { Box, Container, List, styled } from "@mui/material";
+import { Box, Container, styled } from "@mui/material";
 
 export const StyledSelectContainer = styled(Box)`
   display: flex;
-`;
-
-export const StyledList = styled(List)`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start; /* Align items to the start of the flex container */
-  list-style: none;
-  padding: 0;
 `;
 
 interface ListProps {
