@@ -8,7 +8,7 @@ const StyledContainer = styled(Box)`
   border: solid;
   display: inline-grid;
   grid-template-rows: repeat(4, auto);
-  margin: 5px;
+  margin: 10px;
 `;
 
 const StyledItemZone = styled(Box)`
