@@ -1,0 +1,25 @@
+zone,command,description,category
+Sebilis,#zone sebilis 209 -1623 -122,Main entrance,hunt
+Sebilis,#zone sebilis 209 -1623 -122,South area,hunt
+Sebilis,#zone sebilis -758 -1917 -130,Trakanon boss,plat
+Sebilis,#zone sebilis 205 -1728 -122,Tolan's Darkwood Vambraces clicky farm,clicky
+Guild Lobby,#zone guildlobby -74 424 10,Merchant Drake,npc
+Guild Lobby,#zone guildlobby -44 306 10,Grandmaster Guru (learn spells),npc
+Guild Lobby,#zone guildlobby 67 503 10,Daily Tasks,npc
+Guild Lobby,#zone guildlobby -285 504 3,Tier Two,npc
+Guild Lobby,#zone guildlobby -80 401 10,Merchant Draco
+Guild Lobby,#zone guildlobby 252 262 10,Aug Vendor
+Sebilis,#zone sebilis -207 -1561 -176,Golem Hunting,hunt
+Veeshan,#zone veeshan -1392 -1143 290,Phara Dar (Velius progression),plat
+Karnor,#zone karnor -693 125 32,Elder Spiritist's Vambraces Clicky,clicky
+ChardokB,#zone chardokb 841 -589  42,South Area,hunt
+ChardokB,#zone chardokb 355 -90 32,South Area Room Top Level,hunt
+ChardokB,#zone chardokb 203 -188 32,South Area Split Center Top Level,hunt
+Temple of Veeshan,#zone templeveeshan -256 996 130,Lady Mirenilla (Luclin progression),progression
+Temple of Veeshan,#zone templeveeshan -1679 1523 180,Lady Nevederia (Luclin progression),progression
+Temple of Veeshan,#zone templeveeshan -1198 58 85,Lord Feshlak (Luclin progression),progression
+Temple of Veeshan,#zone templeveeshan -7 720 105,Lord Koi'Doken (Luclin progression),progression
+Temple of Veeshan,#zone templeveeshan -1780 273 85,Lord Kreizenn (Luclin progression),progression
+Temple of Veeshan,#zone templeveeshan -3 -130 60,Lord Vyemm (Luclin progression),progression
+Temple of Veeshan,#zone templeveeshan -740 742 130,Vulak'Aerr (Luclin progression),progression
+Bazaar,#zone bazaar -766 1407 34,Trader zone,trade
