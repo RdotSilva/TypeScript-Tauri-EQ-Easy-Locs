@@ -4,6 +4,7 @@ import { appWindow } from "@tauri-apps/api/window";
 import { parseCSVFile } from "./utils/csvParser";
 
 import { LocItem } from "./types/LocItem";
+import { CircularProgress } from "@mui/material";
 
 await appWindow.setAlwaysOnTop(true);
 
@@ -28,7 +29,7 @@ function App() {
   return (
     <div className="container">
       <div className="row">
-        {items === null ? <p>Loading...</p> : <ItemList items={items} />}
+        {items === null ? <CircularProgress /> : <ItemList items={items} />}
       </div>
     </div>
   );
