@@ -20,13 +20,9 @@ const ItemList: React.FC<ListProps> = ({ items }) => {
     selectedCategory,
     handleZoneChange,
     handleCategoryChange,
+    uniqueCategories,
+    uniqueZones,
   } = useFilterItems(items);
-
-  const uniqueCategories = [...new Set(items.map((item) => item.category))]
-    .filter((category) => category !== undefined)
-    .map((category) => category as string);
-
-  const uniqueZones = [...new Set(items.map((item) => item.zone))];
 
   return (
     <Container>
