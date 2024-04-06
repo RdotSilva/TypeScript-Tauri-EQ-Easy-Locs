@@ -43,4 +43,11 @@ export const mockItemList: LocItem[] = [
     description: "Boss",
     category: "npc",
   },
+  {
+    id: 7,
+    zone: "Guild Lobby",
+    command: "#zone guildelobby -100 500 -224",
+    description: "NPC Merchant",
+    category: "npc",
+  },
 ];
