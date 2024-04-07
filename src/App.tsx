@@ -5,6 +5,7 @@ import { parseCSVFile } from "./utils/csvParser";
 
 import { LocItem } from "./types/LocItem";
 import { CircularProgress } from "@mui/material";
+import SideNavigationBar from "./components/SideNavigationBar/SideNavigationBar";
 
 await appWindow.setAlwaysOnTop(true);
 
@@ -29,7 +30,14 @@ function App() {
   return (
     <div className="container">
       <div className="row">
-        {items === null ? <CircularProgress /> : <ItemList items={items} />}
+        {items === null ? (
+          <CircularProgress />
+        ) : (
+          <>
+            <SideNavigationBar items={items} />
+            <ItemList items={items} />
+          </>
+        )}
       </div>
     </div>
   );
