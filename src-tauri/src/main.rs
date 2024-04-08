@@ -10,10 +10,7 @@ use winapi::um::winuser::{
     SendInput, INPUT, INPUT_KEYBOARD, KEYBDINPUT, KEYEVENTF_KEYUP, KEYEVENTF_UNICODE,
 };
 
-use winapi::um::winuser::{FindWindowA, SetForegroundWindow};
-use winapi::um::winuser::{
-    SendInput, INPUT, INPUT_KEYBOARD, KEYBDINPUT, KEYEVENTF_KEYUP, KEYEVENTF_UNICODE,
-};
+// use winapi::um::winuser::{FindWindowA, SetForegroundWindow};
 
 use tauri::Manager;
 
