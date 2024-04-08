@@ -4,10 +4,15 @@ import { appWindow } from "@tauri-apps/api/window";
 import { parseCSVFile } from "./utils/csvParser";
 
 import { LocItem } from "./types/LocItem";
-import { CircularProgress } from "@mui/material";
+import { Box, CircularProgress } from "@mui/material";
 import SideNavigationBar from "./components/SideNavigationBar/SideNavigationBar";
+import { styled } from "@mui/system";
 
 await appWindow.setAlwaysOnTop(true);
+
+export const StyledContainer = styled(Box)`
+  display: flex;
+`;
 
 function App() {
   const [items, setItems] = useState<LocItem[]>([]);
@@ -33,10 +38,10 @@ function App() {
         {items === null ? (
           <CircularProgress />
         ) : (
-          <>
+          <StyledContainer>
             <SideNavigationBar items={items} />
             <ItemList items={items} />
-          </>
+          </StyledContainer>
         )}
       </div>
     </div>
