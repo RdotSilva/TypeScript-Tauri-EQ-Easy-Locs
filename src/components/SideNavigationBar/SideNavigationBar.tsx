@@ -1,14 +1,11 @@
 import { Button, List } from "@mui/material";
-import useFilterItems from "../../hooks/useFilterItems";
 
-const SideNavigationBar = ({ handler }) => {
-  const { uniqueZones } = useFilterItems(items);
-
+const SideNavigationBar = ({ zones, onChangeHandler }) => {
   return (
     <div>
       <List>
-        {uniqueZones.map((zone, index) => (
-          <Button onClick={() => handler(zone)}>{zone}</Button>
+        {zones.map((zone, index) => (
+          <Button onClick={() => onChangeHandler(zone)}>{zone}</Button>
         ))}
       </List>
     </div>
