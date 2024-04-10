@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
-import ItemList from "./components/ItemList/ItemList";
+
 import { appWindow } from "@tauri-apps/api/window";
 import { parseCSVFile } from "./utils/csvParser";
 
 import { LocItem } from "./types/LocItem";
 import { Box, CircularProgress } from "@mui/material";
-import SideNavigationBar from "./components/SideNavigationBar/SideNavigationBar";
+
 import { styled } from "@mui/system";
+import ItemListNew from "./components/ItemListNew/ItemListNew";
 
 await appWindow.setAlwaysOnTop(true);
 
@@ -39,8 +40,7 @@ function App() {
           <CircularProgress />
         ) : (
           <StyledContainer>
-            <SideNavigationBar items={items} />
-            <ItemList items={items} />
+            <ItemListNew items={items} />
           </StyledContainer>
         )}
       </div>
