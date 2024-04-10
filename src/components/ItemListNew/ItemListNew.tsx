@@ -1,9 +1,8 @@
 import React from "react";
 import { LocItem } from "../../types/LocItem";
-import FilterSelectInput from "../FilterSelectInput/FilterSelectInput";
+
 import LocDetails from "../LocDetails/LocDetails";
 import { Box, Container, styled } from "@mui/material";
-import useFilterItems from "../../hooks/useFilterItems";
 
 export const StyledSelectContainer = styled(Box)`
   display: flex;
